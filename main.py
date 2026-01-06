@@ -1,11 +1,14 @@
-from database import add_student, get_students
+from database import create_table, add_student, get_students
 
 def show_menu():
     print("\nStudent Management System")
     print("1. Add student")
     print("2. View students")
     print("3. Exit")
-
+    
+def main():
+    create_table()
+    
 def main():
     while True:
         show_menu()
