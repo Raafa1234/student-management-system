@@ -33,3 +33,8 @@ def modify_student(student_id, name, age, grade):
         return
 
     update_student(student_id, name, age, grade)
+
+from database import delete_student
+
+def remove_student(student_id):
+    delete_student(student_id)
