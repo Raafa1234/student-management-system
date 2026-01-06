@@ -22,3 +22,14 @@ def list_students():
 
     for student in students:
         print(f"ID: {student[0]} | Name: {student[1]} | Age: {student[2]} | Grade: {student[3]}")
+
+from database import update_student
+
+def modify_student(student_id, name, age, grade):
+    try:
+        age = int(age)
+    except ValueError:
+        print("Age must be a number.")
+        return
+
+    update_student(student_id, name, age, grade)
