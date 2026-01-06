@@ -63,3 +63,16 @@ def get_students():
 
     conn.close()
     return students
+
+def delete_student(student_id):
+    conn = connect_db()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM students WHERE id = ?", (student_id,))
+    conn.commit()
+    conn.close()
+
+    if cursor.rowcount == 0:
+        print("Student not found.")
+    else:
+        print("Student deleted successfully.")
