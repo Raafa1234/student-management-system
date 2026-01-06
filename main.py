@@ -6,7 +6,10 @@ def show_menu():
     print("\nStudent Management System")
     print("1. Add student")
     print("2. View students")
-    print("3. Exit")
+    print("3. Update student")
+    print("4. Delete student")
+    print("5. Exit")
+
     
 def main():
     create_table()
@@ -27,7 +30,15 @@ if option == "1":
 elif option == "2":
     list_students()
 
-        elif option == "3":
+elif option == "3":
+    student_id = input("Student ID to update: ")
+    name = input("New name: ")
+    age = input("New age: ")
+    grade = input("New grade: ")
+
+    modify_student(student_id, name, age, grade)
+
+        elif option == "5":
             print("Exiting system...")
             break
 
