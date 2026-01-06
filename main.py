@@ -38,9 +38,13 @@ elif option == "3":
 
     modify_student(student_id, name, age, grade)
 
-        elif option == "5":
-            print("Exiting system...")
-            break
+elif option == "4":
+    student_id = input("Student ID to delete: ")
+    remove_student(student_id)
+
+elif option == "5":
+    print("Exiting system...")
+    break
 
         else:
             print("Invalid option. Try again.")
