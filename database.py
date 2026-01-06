@@ -39,6 +39,25 @@ def get_students():
     conn = connect_db()
     cursor = conn.cursor()
 
+    def update_student(student_id, name, age, grade):
+    conn = connect_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE students
+        SET name = ?, age = ?, grade = ?
+        WHERE id = ?
+    """, (name, age, grade, student_id))
+
+    conn.commit()
+    conn.close()
+
+    if cursor.rowcount == 0:
+        print("Student not found.")
+    else:
+        print("Student updated successfully.")
+
+
     cursor.execute("SELECT * FROM students")
     students = cursor.fetchall()
 
